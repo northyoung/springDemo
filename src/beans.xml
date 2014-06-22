@@ -5,4 +5,4 @@
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="personService" class="cn.itcast.service.impl.PersonServiceBean"></bean>
  
-</beans>
+</beans> 
