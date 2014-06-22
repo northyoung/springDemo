@@ -22,4 +22,8 @@ public class SpringTest {
 		personService.save();
 	}
 	
+	
+	public void test(){
+		
+	}
 }
