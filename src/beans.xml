@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<context:annotation-config/>
+    
+    
+
+
+
+    <!-- 通过@Resource Field注入 -->
+   	<bean id="personDao" class="cn.itcast.dao.impl.PersonDaoBean" ></bean>
+    <bean id="personService2" class="cn.itcast.service.impl.PersonServiceBean2">
+    </bean>
+    <!-- 构造器注入实例 -->
+    <!--
+   	<bean id="personDao" class="cn.itcast.dao.impl.PersonDaoBean" ></bean>
+    <bean id="personService2" class="cn.itcast.service.impl.PersonServiceBean2"> 
+    	<constructor-arg index="0" type="cn.itcast.dao.PersonDao" ref="personDao"/>
+    	<constructor-arg index="1" value="NAME"></constructor-arg>
+    </bean>
+ 	-->
+    <!--
+	<bean id="personService" class="cn.itcast.service.impl.PersonServiceBean" >
+		<property name="personDao" ref="personDao"></property>  指定注入属性 
+		<property name="name" value="tom"></property>	
+		<property name="id" value="1"></property>
+		<property name="sets">
+			<set>
+				<value>第一个</value>
+				<value>第二个</value>
+				<value>第三个</value>
+			</set>
+		</property>		
+		<property name="lists">
+			<list>
+				<value>第一个list</value>
+				<value>第二个list</value>
+				<value>第三个list</value>
+			</list>
+		</property>	
+		<property name="properties">
+			<props>
+				<prop key="key1">第一个pro</prop>
+				<prop key="key2">第二个pro</prop>
+				<prop key="key3">第三个pro</prop>
+			</props>
+		</property>		
+		<property name="maps">
+			<map>
+				<entry key="key1" value="value-1"></entry>
+				<entry key="key2" value="value-2"></entry>
+				<entry key="key3" value="value-3"></entry>
+			</map>
+		</property>			
+				
+	</bean>
+ -->	
+
+<!--采用内部bean方式 -->	
+<!--
+	<bean id="personService" class="cn.itcast.service.impl.PersonServiceBean" >
+		<property name="personDao">
+			<bean class="cn.itcast.dao.impl.PersionDaoBean"/>
+		</property>      	
+	</bean>
+-->
+	
+
+<!--
+	每调用一次返回一个新的对象
+	<bean id="personService" class="cn.itcast.service.impl.PersonServiceBean" scope="prototype"></bean>
+-->	
+<!--
+	另外两种实例化方法
+	 <bean id="personService2" class="cn.itcast.service.impl.PersonServiceBeanFactory"
+	 factory-method="createPersonServiceBean"/>
+	 <bean id="personServiceFactory" class="cn.itcast.service.impl.PersonServiceBeanFactory"></bean>
+	 <bean id="personService3" factory-bean="personServiceFactory"
+	 factory-method="createPersonServiceBean2"/>
+-->
+<!--
+ 	指定Bean的初始化方法和销毁方法
+	<bean id="xxx" class="cn.itcast.OrderServiceBean" init-method="init" destory-method="close"></bean>
+ -->
+ <!--
+ 	加了scope 调用bean实例化  不加scope 加载配置文件实例化 同延时初始化  lazy-init="true" 
+	<bean id="personService" class="cn.itcast.service.impl.PersonServiceBean"></bean>
+	先进行初始化 在进行实例化
+	<bean id="personService" class="cn.itcast.service.impl.PersonServiceBean" init-method="init" destroy-method="destroy"></bean>
+ -->
+</beans>
+ 
