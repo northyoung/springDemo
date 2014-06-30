@@ -33,8 +33,10 @@ public class SpringTest {
 //		personService.save();
 //		ctx.close();
 //		ItcastClassPathXMLApplicationContext ctx = new ItcastClassPathXMLApplicationContext("beans.xml");
-//		PersonService personService = (PersonService)ctx.getBean("personService");
-		PersonService2 personService = (PersonService2)ctx.getBean("personService2");
+//		PersonService personService =D (PersonService)ctx.getBean("personService");
+//		PersonService2 personService = (PersonService2)ctx.getBean("personServiceBean2");
+		PersonService2 personService = (PersonService2)ctx.getBean("personService");
+//		PersonService2 personService2 = (PersonService2)ctx.getBean("personService");
 //      System.out.println("Set");
 //		for(String value : personService.getSets()){
 //			System.out.println(value);
@@ -51,6 +53,8 @@ public class SpringTest {
 //		for(Object key : personService.getMaps().keySet()){
 //			System.out.println(key+"="+ personService.getMaps().get(key));
 //		}
-		personService.save();
+//		System.out.println(personService.equals(personService2));
+//		personService.save();
+		ctx.close();
 	}	
 }

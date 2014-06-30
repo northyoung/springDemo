@@ -5,18 +5,27 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
            http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-2.5.xsd">
-	<context:annotation-config/>
+	<context:component-scan base-package="cn.itcast"/> 
+	<!-- <context:annotation-config/> -->
     
     
 
 
 
     <!-- 通过@Resource Field注入 -->
+    <!-- 
    	<bean id="personDao" class="cn.itcast.dao.impl.PersonDaoBean" ></bean>
     <bean id="personService2" class="cn.itcast.service.impl.PersonServiceBean2">    
     </bean>
-    
-    <!-- <bean id="personService2" class="cn.itcast.service.impl.PersonServiceBean2" autowire>  -->
+     -->
+    <!--
+		进行自动装配		
+    	按照类型进行装配
+    	<bean id="personService2" class="cn.itcast.service.impl.PersonServiceBean2" autowire="byType">
+    	按照名称进行装配
+    	<bean id="personService2" class="cn.itcast.service.impl.PersonServiceBean2" autowire="byName">
+    	
+    -->
     <!-- 构造器注入实例 -->
     <!--
    	<bean id="personDao" class="cn.itcast.dao.impl.PersonDaoBean" ></bean>
