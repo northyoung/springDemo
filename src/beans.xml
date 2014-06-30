@@ -13,8 +13,10 @@
 
     <!-- 通过@Resource Field注入 -->
    	<bean id="personDao" class="cn.itcast.dao.impl.PersonDaoBean" ></bean>
-    <bean id="personService2" class="cn.itcast.service.impl.PersonServiceBean2">
+    <bean id="personService2" class="cn.itcast.service.impl.PersonServiceBean2">    
     </bean>
+    
+    <!-- <bean id="personService2" class="cn.itcast.service.impl.PersonServiceBean2" autowire>  -->
     <!-- 构造器注入实例 -->
     <!--
    	<bean id="personDao" class="cn.itcast.dao.impl.PersonDaoBean" ></bean>

@@ -7,6 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.itcast.service.PersonService;
@@ -23,11 +24,11 @@ public class SpringTest {
 
 	@Test
 	public void instanceSpring() {
-		ItcastClassPathXMLApplicationContext ctx = new ItcastClassPathXMLApplicationContext("beans.xml");
+//		ItcastClassPathXMLApplicationContext ctx = new ItcastClassPathXMLApplicationContext("beans.xml");
 //		PersonService personService = (PersonService)ctx.getBean("personService");
 //		System.out.println(personService1==personService2);
 		
-//		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
+		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 //		PersonService personService = (PersonService)ctx.getBean("personService");
 //		personService.save();
 //		ctx.close();

@@ -2,6 +2,9 @@ package cn.itcast.service.impl;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import junit.test.ItcastResource;
 import cn.itcast.dao.PersonDao;
 import cn.itcast.service.PersonService2;
@@ -16,10 +19,13 @@ import cn.itcast.service.PersonService2;
 public class PersonServiceBean2 implements PersonService2 {
 	//@ItcastResource 
 	//@Resource 
-	private PersonDao personDao;
+	//@Autowired(required=false|@Qualifier("personDaoxxx")) private PersonDao personDao;
+	//require 如果是true 找不打PersonDao类型报错  如果是falue 找不到PersonDao则为null
+	
+	@Autowired(required=false)@Qualifier("personDao") private PersonDao personDao;
 	private String name;
 	public PersonServiceBean2(){}
-	@ItcastResource
+//	@ItcastResource
 	public void setPersonDao(PersonDao personDao) {
 		this.personDao = personDao;
 	}
