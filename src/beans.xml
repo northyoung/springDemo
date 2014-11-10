@@ -201,5 +201,4 @@
 	<bean id="personService" class="cn.itcast.service.impl.PersonServiceBean" init-method="init" destroy-method="destroy"></bean>
  -->
 </beans>
->>>>>>> refs/remotes/choose_remote_name/master
- 
+
